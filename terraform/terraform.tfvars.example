@@ -1,0 +1,31 @@
+# =============================================================
+# TERRAFORM VARIABLES EXAMPLE
+# =============================================================
+# Copy this file to terraform.tfvars and fill in your values:
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# IMPORTANT: Never commit terraform.tfvars to Git (it may contain secrets)
+# =============================================================
+
+# --- Network Configuration ---
+vpc_cidr                = "10.0.0.0/16"
+public_subnet_one_cidr  = "10.0.1.0/24"
+public_subnet_two_cidr  = "10.0.2.0/24"
+private_subnet_one_cidr = "10.0.3.0/24"
+private_subnet_two_cidr = "10.0.4.0/24"
+
+# --- Availability Zones ---
+availability_zone_one = "us-east-1a"
+availability_zone_two = "us-east-1b"
+
+# --- Security ---
+# Find your IP: curl ifconfig.me
+# MUST include /32 at the end (single host)
+my_ip = "105.127.6.87/32"
+
+# --- EC2 Configuration ---
+instance_type = "t2.micro"
+key_name      = "startuptech.pem"
+
+# NOTE: AMI is found automatically via data source - no need to specify here!
+
