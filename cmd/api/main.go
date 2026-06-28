@@ -49,6 +49,7 @@ const usernameCacheTTL = 24 * time.Hour
 func main() {
 	// 1. Load Configuration
 	cfg, err := config.LoadConfig(".")
+	fmt.Printf("MongoURI = %q\n", cfg.MongoURI)
 	if err != nil {
 		log.Fatalf("could not load config: %v", err)
 	}
